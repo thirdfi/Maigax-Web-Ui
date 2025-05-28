@@ -1,0 +1,79 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 175 33% 93%;
+    --foreground: 174 50% 5%;
+
+    --card: 174 30% 6%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 174 30% 6%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 174 42% 8%;
+    --primary-foreground: 0 0% 95%;
+
+    --secondary: 174 24% 28%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 174 10% 20%;
+    --muted-foreground: 0 0% 70%;
+
+    --accent: 168 65% 47%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 174 8% 25%;
+    --input: 174 8% 25%;
+    --ring: 168 65% 47%;
+
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    background-image: radial-gradient(
+      circle at center,
+      #0e1a18 0%,
+      #08100f 100%
+    );
+    background-attachment: fixed;
+    min-height: 100vh;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-semibold;
+  }
+}
+
+@layer components {
+  .card-gradient {
+    @apply bg-gradient-card hover:bg-gradient-card-hover transition-all duration-300;
+  }
+  
+  .stats-card {
+    @apply rounded-xl overflow-hidden border border-maiga-secondary-dark bg-black/30 backdrop-blur-sm;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  }
+  
+  .glass-card {
+    @apply rounded-xl border border-maiga-secondary-dark bg-black/20 backdrop-blur-md;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .shimmer {
+    @apply relative overflow-hidden before:absolute before:inset-0 before:translate-x-full before:animate-shimmer before:bg-gradient-to-r before:from-transparent before:via-white/10 before:to-transparent;
+  }
+}

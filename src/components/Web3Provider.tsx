@@ -2,7 +2,6 @@ import { ReactNode, useEffect, useState, createContext, useContext } from 'react
 import { useAccount, useDisconnect } from 'wagmi';
 import { useAppKit } from '@reown/appkit/react';
 
-// 统一接口保持不变
 interface Web3ContextType {
   address: string | null;
   isConnected: boolean;
@@ -22,9 +21,9 @@ interface Web3ProviderProps {
 }
 
 export function Web3Provider({ children }: Web3ProviderProps) {
-  const { isConnected, address } = useAccount();         // ✅ 真正的钱包连接状态
+  const { isConnected, address } = useAccount();       
   const { disconnect: wagmiDisconnect } = useDisconnect();
-  const { open } = useAppKit();                           // ✅ 用 Reown 打开连接
+  const { open } = useAppKit();                           
 
   const [mounted, setMounted] = useState(false);
 

@@ -113,7 +113,7 @@ const Index = () => {
 
             <Card className="stats-card hover:border-maiga-accent transition-colors">
               <CardContent className="p-4 flex flex-col items-center justify-center h-24">
-                <Link to="https://coinmarketcap.com/currencies/maiga/" target="_blank" className="text-center">
+                <Link to="https://coinmarketcap.com/currencies/" target="_blank" className="text-center">
                   <div className="text-maiga-accent mb-2">CoinMarketCap</div>
                   <div className="text-xs text-muted-foreground">Trade tokens</div>
                 </Link>
